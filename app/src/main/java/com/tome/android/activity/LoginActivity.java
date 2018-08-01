@@ -3,7 +3,7 @@ package com.tome.android.activity;
 /**
  * Created by zhangyufei
  */
-public class MainActivity extends BaseActivity{
+public class LoginActivity extends BaseActivity{
     @Override
     public void init() {
 

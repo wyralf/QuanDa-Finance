@@ -3,5 +3,7 @@ package com.tome.android.view;
 /**
  * Created by zhangyufei
  */
-public class SplashView {
+public interface SplashView {
+    void onLoggedIn();
+    void onNoLogin();
 }
