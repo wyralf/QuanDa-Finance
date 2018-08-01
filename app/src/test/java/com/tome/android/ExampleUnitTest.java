@@ -1,4 +1,4 @@
-package com.tome.tome;
+package com.tome.android;
 
 import org.junit.Test;
 
