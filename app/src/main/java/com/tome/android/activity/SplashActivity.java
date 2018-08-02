@@ -40,7 +40,7 @@ public class SplashActivity extends BaseActivity implements SplashView{
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(LoginActivity.class);
+                startActivity(MainActivity.class);
             }
         }, DELAY_TIME);
     }

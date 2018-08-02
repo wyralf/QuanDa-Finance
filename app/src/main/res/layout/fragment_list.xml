@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/blue_color">
+        <TextView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/product_name"
+            android:textColor="@color/yellow_color"
+            android:textSize="@dimen/activity_main_text_size"
+            android:layout_marginLeft="@dimen/main_text_margin_left"
+            android:layout_marginRight="@dimen/main_margin"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"/>
+        <EditText
+            android:id="@+id/query"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="4dp"
+            android:background="@mipmap/em_seabar_input"
+            android:drawableLeft="@mipmap/em_search_bar_icon_normal"
+            android:hint="@string/search"
+            android:paddingBottom="5dp"
+            android:paddingLeft="5dp"
+            android:paddingTop="5dp"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_toRightOf="@+id/logo"
+            android:singleLine="true"
+            android:layout_marginRight="@dimen/activity_main_text_size"
+            android:imeOptions="actionSearch"
+            android:textSize="16sp"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </android.support.v7.widget.RecyclerView>
+        </android.support.v4.widget.SwipeRefreshLayout>
+
+    </FrameLayout>
+</LinearLayout>

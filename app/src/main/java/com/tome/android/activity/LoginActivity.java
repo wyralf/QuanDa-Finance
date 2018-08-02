@@ -52,7 +52,7 @@ public class LoginActivity extends BaseActivity implements LoginView{
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.login:
-                //startLogin();
+                startLogin();
                 break;
             case R.id.new_user:
                 startActivity(RegisterActivity.class, false);

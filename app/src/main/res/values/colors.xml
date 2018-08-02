@@ -9,4 +9,8 @@
     <color name="blue_color">#00acff</color>
     <color name="blue_pressed">#00a1db</color>
     <color name="blue_disabled">#559c9c9c</color>
+    <color name="common_bg">#fcfcfc</color>
+    <color name="bottom_bar_normal_bg">#2D2F31</color>
+    <color name="common_bottom_bar_normal_bg">#2d2f31</color>
+    <color name="common_bottom_bar_selected_bg">#161718</color>
 </resources>
