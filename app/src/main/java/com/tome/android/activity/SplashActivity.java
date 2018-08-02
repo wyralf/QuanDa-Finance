@@ -19,8 +19,10 @@ public class SplashActivity extends BaseActivity implements SplashView{
     private SplashPresenter mSplashPresenter;
 
     @Override
-    public void init() {
+    protected void init() {
+        super.init();
         mSplashPresenter = new SplashPresenterImpl(this);
+        mSplashPresenter.checkLoginStatus();
     }
 
     @Override
