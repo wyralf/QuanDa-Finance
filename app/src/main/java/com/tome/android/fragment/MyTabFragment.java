@@ -1,8 +1,10 @@
 package com.tome.android.fragment;
 
+import com.tome.android.R;
+
 public class MyTabFragment extends BaseFragment{
     @Override
     protected int getLayoutRes() {
-        return 0;
+        return R.layout.fragment_my;
     }
 }

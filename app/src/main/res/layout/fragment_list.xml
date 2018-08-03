@@ -33,7 +33,6 @@
             android:paddingLeft="5dp"
             android:paddingTop="5dp"
             android:focusable="true"
-            android:focusableInTouchMode="true"
             android:layout_toRightOf="@+id/logo"
             android:singleLine="true"
             android:layout_marginRight="@dimen/activity_main_text_size"

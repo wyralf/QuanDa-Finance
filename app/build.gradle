@@ -27,4 +27,8 @@ dependencies {
 
     compile 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    compile ('com.roughike:bottom-bar:2.3.1'){
+        exclude module: 'design'
+    }
 }
