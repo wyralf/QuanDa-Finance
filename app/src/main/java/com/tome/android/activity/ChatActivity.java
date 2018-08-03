@@ -1,5 +1,7 @@
 package com.tome.android.activity;
 
+import com.tome.android.R;
+
 public class ChatActivity extends BaseActivity{
     @Override
     protected void init() {
@@ -8,6 +10,6 @@ public class ChatActivity extends BaseActivity{
 
     @Override
     public int getLayoutRes() {
-        return 0;
+        return R.layout.activity_chat;
     }
 }
