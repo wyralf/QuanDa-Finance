@@ -21,3 +21,13 @@
 #-renamesourcefileattribute SourceFile
 -keep class com.hyphenate.** {*;}
 -dontwarn  com.hyphenate.**
+-keep public class * implements com.bumptech.glide.module.GlideModule
+-keep public class * extends com.bumptech.glide.module.AppGlideModule
+
+# for DexGuard only
+-keepresourcexmlelements manifest/application/meta-data@value=GlideModule
+-keep public enum com.bumptech.glide.load.ImageHeaderParser$** {
+**[] $VALUES;
+public *;
+
+}
