@@ -8,6 +8,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.hyphenate.chat.EMClient;
 import com.tome.android.R;
 import com.tome.android.adapter.MessageListAdapter;
@@ -45,6 +46,7 @@ public class ChatActivity extends BaseActivity implements ChatView{
         String title = String.format(getString(R.string.chat_with), mUserName);
         mTitle.setText(title);
         initRecyclerView();
+
         mChatPresenter.loadMessages(mUserName);
     }
 

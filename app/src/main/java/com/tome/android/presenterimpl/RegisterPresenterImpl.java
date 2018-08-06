@@ -1,7 +1,10 @@
 package com.tome.android.presenterimpl;
 
+import com.hyphenate.chat.EMClient;
+import com.hyphenate.exceptions.HyphenateException;
 import com.tome.android.presenter.RegisterPresenter;
 import com.tome.android.utils.StringUtils;
+import com.tome.android.utils.ThreadUtils;
 import com.tome.android.view.RegisterView;
 
 /**
@@ -32,6 +35,27 @@ public class RegisterPresenterImpl implements RegisterPresenter{
     }
 
     private void register(final String userName, final String pwd) {
-
+        ThreadUtils.runOnBackgroundThread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    EMClient.getInstance().createAccount(userName, pwd);
+                    ThreadUtils.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mRegisterView.onRegisterSuccess();
+                        }
+                    });
+                } catch (HyphenateException e) {
+                    e.printStackTrace();
+                    ThreadUtils.runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            mRegisterView.onRegisterError();
+                        }
+                    });
+                }
+            }
+        });
     }
 }
