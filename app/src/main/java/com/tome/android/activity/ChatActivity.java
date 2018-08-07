@@ -19,7 +19,6 @@ import com.tome.android.view.ChatView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import imageloader.libin.com.images.loader.ImageLoader;
 
 public class ChatActivity extends BaseActivity implements ChatView{
     @BindView(R.id.title)

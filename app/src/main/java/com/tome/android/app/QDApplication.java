@@ -12,8 +12,6 @@ import com.tome.android.BuildConfig;
 import java.util.Iterator;
 import java.util.List;
 
-import imageloader.libin.com.images.loader.ImageLoader;
-
 /**
  * Created by zhangyufei
  */
@@ -24,7 +22,6 @@ public class QDApplication extends Application{
         super.onCreate();
         Log.d(TAG, "onCreate: ");
         initHuanXin();
-        ImageLoader.init(getApplicationContext());
 
     }
 
