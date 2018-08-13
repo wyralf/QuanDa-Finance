@@ -1,282 +1,109 @@
 package com.tome.android.Image;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.StateListDrawable;
-import android.net.Uri;
-import android.text.TextUtils;
 import android.view.View;
-import android.widget.ImageView;
 
-/**
- * Created by zhangyufei
- */
+import com.bumptech.glide.MemoryCategory;
+
+
 public class ImageLoader {
+    public static Context context;
+    /**
+     * 默认最大缓存
+     */
+    public static int CACHE_IMAGE_SIZE = 250;
 
-    private static final int TAG = 0;
-    private static ImageLoader self;
-    private Loader loader;
-
-    private ImageLoader(Loader loader) {
-        this.loader = loader;
+    public static void init(final Context context) {
+        init(context, CACHE_IMAGE_SIZE);
     }
 
-    public static void init(Context context, Loader loader) {
-        loader.init(context);
-        self = new ImageLoader(loader);
+    public static void init(final Context context, int cacheSizeInM) {
+        init(context, cacheSizeInM, MemoryCategory.NORMAL);
     }
 
-    public static ImageLoader getInstance() {
-        if (self == null) {
-            throw new RuntimeException("ImageLoader has not been initialized !!!");
-        }
-        return self;
+    public static void init(final Context context, int cacheSizeInM, MemoryCategory memoryCategory) {
+        init(context, cacheSizeInM, memoryCategory, true);
     }
 
-    public void setImageURL(int tag, ImageView target, String url, CallBack callBack) {
-        if (TextUtils.isEmpty(url)) {
-            url = "";
-        }
-        loader.loadImageURI(tag, target, Uri.parse(url), callBack);
+    /**
+     * @param context        上下文
+     * @param cacheSizeInM   Glide默认磁盘缓存最大容量250MB
+     * @param memoryCategory 调整内存缓存的大小 LOW(0.5f) ／ NORMAL(1f) ／ HIGH(1.5f);
+     * @param isInternalCD   true 磁盘缓存到应用的内部目录 / false 磁盘缓存到外部存
+     */
+    public static void init(final Context context, int cacheSizeInM, MemoryCategory memoryCategory, boolean isInternalCD) {
+        ImageLoader.context = context;
+        GlobalConfig.init(context, cacheSizeInM, memoryCategory, isInternalCD);
     }
 
-    public void setImageURL(ImageView target, String url) {
-        if (TextUtils.isEmpty(url)) {
-            url = "";
-        }
-        loader.loadImageURI(loader.getDefaultTag(), target, Uri.parse(url), null);
+    /**
+     * 获取当前的Loader
+     * @return
+     */
+    public static ILoader getActualLoader() {
+        return GlobalConfig.getLoader();
     }
 
-    public void setImageURL(ImageView target, String url, CallBack callBack) {
-        if (TextUtils.isEmpty(url)) {
-            url = "";
-        }
-        loader.loadImageURI(loader.getDefaultTag(), target, Uri.parse(url), callBack);
+    /**
+     * 加载普通图片
+     *
+     * @param context
+     * @return
+     */
+    public static SingleConfig.ConfigBuilder with(Context context) {
+        return new SingleConfig.ConfigBuilder(context);
     }
 
-    public void setImageURL(int tag, ImageView target, String url) {
-        if (TextUtils.isEmpty(url)) {
-            url = "";
-        }
-        loader.loadImageURI(tag, target, Uri.parse(url), null);
+    public static void trimMemory(int level) {
+        getActualLoader().trimMemory(level);
     }
 
-    public void setImageURI(int tag, ImageView target, Uri uri, CallBack callBack) {
-        loader.loadImageURI(tag, target, uri, callBack);
+    public static void clearAllMemoryCaches() {
+        getActualLoader().clearAllMemoryCaches();
     }
 
-    public void setImageURI(ImageView target, Uri uri) {
-        loader.loadImageURI(loader.getDefaultTag(), target, uri, null);
-    }
-
-    public void setImageURI(ImageView target, Uri uri, CallBack callBack) {
-        loader.loadImageURI(loader.getDefaultTag(), target, uri, callBack);
-    }
-
-    public void setImageURI(int tag, ImageView target, Uri uri) {
-        loader.loadImageURI(tag, target, uri, null);
-    }
-
-    public void setRatio(ImageView target, float ratio) {
-        loader.setRatio(target, ratio);
-    }
-
-    public void setSelectImage(ImageView target, Uri select, Uri normal) {
-        loader.setSelectImage(target, select, normal);
-    }
-
-    public void getBitmap(String url, ResultBitmap resultBitmap) {
-        if (TextUtils.isEmpty(url)) {//因为要走comple回调，请不要再改回去了哈
-            url = "";
-        }
-
-        getBitmap(Uri.parse(url), resultBitmap);
-    }
-
-    public void getBitmap(Uri uri, ResultBitmap resultBitmap) {
-        loader.getBitmap(uri, resultBitmap);
-    }
-
-    public void setBackground(View view, Uri uri) {
-        loader.setBackground(view, uri);
-    }
-
-    public void setBackgroundRes(View target, int res) {
-        loader.setBackgroundRes(target, res);
-    }
-
-    public void loadUrl(Uri uri) {
-        loader.loadUrl(uri);
-    }
-
-    public void loadUrl(String uri) {
-        Uri temUri;
-        if (!TextUtils.isEmpty(uri)) {
-            temUri = Uri.parse(uri);
-        } else {
-            temUri = Uri.parse("error://say error");
-        }
-        loader.loadUrl(temUri);
-    }
-
-    public String getCachePath() {
-        return loader.getCachePath();
-    }
-
-    public long getFileSize() {
-        return loader.getFileSize();
-    }
-
-    public void setNewImageURL(int tag, ImageView target, String url, CallBack callBack) {
-        if (TextUtils.isEmpty(url)) {
-            return;
-        }
-        Uri uri = Uri.parse(url);
-        loader.cleanCacheForUri(uri);
-        loader.loadImageURI(tag, target, uri, callBack);
-    }
-
-    public void setNewImageURL(ImageView target, String url) {
-        if (TextUtils.isEmpty(url)) {
-            return;
-        }
-        Uri uri = Uri.parse(url);
-        loader.cleanCacheForUri(uri);
-        loader.loadImageURI(loader.getDefaultTag(), target, uri, null);
-    }
-
-    public void setNewImageURL(ImageView target, String url, CallBack callBack) {
-        if (TextUtils.isEmpty(url)) {
-            return;
-        }
-        Uri uri = Uri.parse(url);
-        loader.cleanCacheForUri(uri);
-        loader.loadImageURI(loader.getDefaultTag(), target, uri, callBack);
-    }
-
-    public void setNewImageURL(int tag, ImageView target, String url) {
-        if (TextUtils.isEmpty(url)) {
-            return;
-        }
-        Uri uri = Uri.parse(url);
-        loader.cleanCacheForUri(uri);
-        loader.loadImageURI(tag, target, uri, null);
-    }
-
-    public void setNewImageURI(int tag, ImageView target, Uri uri, CallBack callBack) {
-        loader.cleanCacheForUri(uri);
-        loader.loadImageURI(tag, target, uri, callBack);
-    }
-
-    public void setNewImageURI(ImageView target, Uri uri) {
-        loader.cleanCacheForUri(uri);
-        loader.loadImageURI(loader.getDefaultTag(), target, uri, null);
-    }
-
-    public void setNewImageURI(ImageView target, Uri uri, CallBack callBack) {
-        loader.cleanCacheForUri(uri);
-        loader.loadImageURI(loader.getDefaultTag(), target, uri, callBack);
-    }
-
-    public void setNewImageURI(int tag, ImageView target, Uri uri) {
-        loader.cleanCacheForUri(uri);
-        loader.loadImageURI(tag, target, uri, null);
-    }
-
-
-    public void getNewBitmap(String url, ResultBitmap resultBitmap) {
-        if (TextUtils.isEmpty(url)) {
-            return;
-        }
-        Uri uri = Uri.parse(url);
-        loader.cleanCacheForUri(uri);
-        getNewBitmap(uri, resultBitmap);
-    }
-
-    public void getNewBitmap(Uri uri, ResultBitmap resultBitmap) {
-        loader.cleanCacheForUri(uri);
-        loader.getBitmap(uri, resultBitmap);
-    }
-
-    public void setNewBackground(View view, Uri uri) {
-        loader.cleanCacheForUri(uri);
-        loader.setBackground(view, uri);
-    }
-
-    public void loadNewUrl(Uri uri) {
-        loader.cleanCacheForUri(uri);
-        loader.loadUrl(uri);
-    }
-
-
-    public void cleanCacheForUri(Uri uri) {
-        loader.cleanCacheForUri(uri);
-    }
-
-    public void loadNewImage(Uri uri) {
-        loader.loadNewImage(uri);
-    }
-
-    public boolean isUriCache(Uri uri) {
-        return loader.isUriCache(uri);
-    }
-
-    public void cleanAllData() {
-        loader.cleanAllData();
-    }
-
-
-    public interface Result {
-        void resultDrawable(StateListDrawable stateListDrawable);
-    }
-
-    public interface Loader {
-
-        int getDefaultTag();
-
-        void init(Context context);
-
-        void loadImageURI(int tag, ImageView target, Uri uri, CallBack callBack);
-
-        void setRatio(ImageView target, float ratio);
-
-        void setSelectImage(ImageView target, Uri select, Uri normal);
-
-        void setBackground(View target, Uri uri);
-
-        void getBitmap(Uri uri, ResultBitmap resultBitmap);
-
-        void loadUrl(Uri uri);
-
-        void cleanAllData();
-
-        boolean isUriCache(Uri uri);
-
-        void cleanCacheForUri(Uri uri);
-
-        void loadNewImage(Uri uri);
-
-        void setBackgroundRes(View target, int res);
-
-        String getCachePath();
-
-        long getFileSize();
+    public static void pauseRequests() {
+        getActualLoader().pause();
 
     }
 
-    // 待修改
-    public interface CallBack {
-
-        void onError(Exception e);
-
-        void onFinish(Object object);
-
-
+    public static void resumeRequests() {
+        getActualLoader().resume();
     }
 
-    public interface ResultBitmap {
-        void resultBitmap(Bitmap bitmap);
+    /**
+     *Cancel any pending loads Glide may have for the view and free any resources that may have been loaded for the view.
+     * @param view
+     */
+    public static void clearMomoryCache(View view) {
+        getActualLoader().clearMomoryCache(view);
+    }
 
-        void complete();
+
+    /**
+     * Clears disk cache.
+     *
+     * <p>
+     *     This method should always be called on a background thread, since it is a blocking call.
+     * </p>
+     */
+    public static void clearDiskCache() {
+        getActualLoader().clearDiskCache();
+    }
+
+    /**
+     * Clears as much memory as possible.
+     */
+    public static void clearMomory() {
+        getActualLoader().clearMomory();
+    }
+
+    /**
+     * 图片保存到相册
+     *
+     * @param downLoadImageService
+     */
+    public static void saveImageIntoGallery(DownLoadImageService downLoadImageService) {
+        getActualLoader().saveImageIntoGallery(downLoadImageService);
     }
 }
