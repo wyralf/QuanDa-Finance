@@ -11,4 +11,8 @@ public class CreditItem {
 
     public String mCreditName;
 
+    public String mCreditLimit;
+
+    public String mCreditInterest;
+
 }

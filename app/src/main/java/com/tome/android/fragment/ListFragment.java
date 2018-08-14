@@ -5,7 +5,9 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.tome.android.R;
+import com.tome.android.activity.ChatActivity;
 import com.tome.android.adapter.CreditListAdapter;
+import com.tome.android.app.Constants;
 import com.tome.android.presenter.CreditPresenter;
 import com.tome.android.presenterimpl.CreditPresenterImpl;
 import com.tome.android.view.CreditView;
@@ -45,7 +47,7 @@ public class ListFragment extends BaseFragment implements CreditView{
     private CreditListAdapter.OnItemClickListener mOnItemClickListener = new CreditListAdapter.OnItemClickListener() {
         @Override
         public void onItemClick(String name) {
-
+            startActivity(ChatActivity.class, Constants.Extra.USER_NAME, name);
         }
 
         @Override

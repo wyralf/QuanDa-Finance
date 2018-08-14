@@ -9,6 +9,7 @@ public class DatabaseManager {
     public static final String TAG = "DatabaseManager";
 
     private static DatabaseManager sInstance;
+    private DaoSession mDaoSession;
     public static DatabaseManager getInstance() {
         if (sInstance == null) {
             synchronized (DatabaseManager.class) {

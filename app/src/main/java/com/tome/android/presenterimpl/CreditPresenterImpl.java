@@ -46,6 +46,8 @@ public class CreditPresenterImpl implements CreditPresenter {
             CreditItem item = new CreditItem();
             item.mCreditName = "科比";
             item.mImageUrl = "http://s1.dwstatic.com/group1/M00/86/4A/81beb00a44bc52b4fdd46285de8f8f00.png";
+            item.mCreditInterest = "贷款利息：3000";
+            item.mCreditLimit = "贷款额度：20000";
             mCreditListItems.add(item);
             saveContactToDatabase(item.mCreditName);
         }

@@ -27,6 +27,10 @@ public class CreditListItemView extends RelativeLayout {
     LinearLayout mListLayout;
     @BindView(R.id.name)
     TextView mCreditName;
+    @BindView(R.id.limit)
+    TextView mCreditLimit;
+    @BindView(R.id.interest)
+    TextView mCreditInterest;
     Context mContext;
     public CreditListItemView(Context context) {
         super(context);
@@ -46,6 +50,8 @@ public class CreditListItemView extends RelativeLayout {
 
     public void bindView(CreditItem creditItem) {
         mCreditName.setText(creditItem.mCreditName);
+        mCreditLimit.setText(creditItem.mCreditLimit);
+        mCreditInterest.setText(creditItem.mCreditInterest);
         ImageLoader.with(mContext)
                 .url(creditItem.mImageUrl)
                 .placeHolder(R.mipmap.avatar1)

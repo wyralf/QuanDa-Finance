@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@id/avatar"
             android:text="Hello"
+            android:layout_centerVertical="true"
             android:gravity="center"
             android:background="@mipmap/send_msg_normal"
             android:padding="5dp"/>
