@@ -1,7 +1,6 @@
 package com.tome.android.database;
 
 import android.content.Context;
-import android.database.sqlite.SQLiteDatabase;
 
 /**
  * Created by zhangyufei
@@ -22,6 +21,6 @@ public class DatabaseManager {
     }
 
     public void init(Context context) {
-        
+
     }
 }
