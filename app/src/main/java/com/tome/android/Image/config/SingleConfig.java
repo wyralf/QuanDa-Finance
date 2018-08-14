@@ -1,4 +1,4 @@
-package com.tome.android.Image;
+package com.tome.android.Image.config;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -8,6 +8,7 @@ import android.view.animation.Animation;
 
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.animation.ViewPropertyAnimation;
+import com.tome.android.Image.ImageUtil;
 
 import java.io.File;
 

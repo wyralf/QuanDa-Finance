@@ -1,4 +1,4 @@
-package com.tome.android.Image;
+package com.tome.android.Image.config;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -7,6 +7,8 @@ import android.os.Looper;
 import android.view.WindowManager;
 
 import com.bumptech.glide.MemoryCategory;
+import com.tome.android.Image.loader.GlideLoader;
+import com.tome.android.Image.loader.ILoader;
 
 public class GlobalConfig {
     public static String baseUrl;

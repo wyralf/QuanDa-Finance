@@ -1,9 +1,12 @@
-package com.tome.android.Image;
+package com.tome.android.Image.loader;
 
 import android.content.Context;
 import android.view.View;
 
 import com.bumptech.glide.MemoryCategory;
+import com.tome.android.Image.DownLoadImageService;
+import com.tome.android.Image.config.SingleConfig;
+import com.tome.android.Image.config.GlobalConfig;
 
 
 public class ImageLoader {

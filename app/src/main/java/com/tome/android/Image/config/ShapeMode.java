@@ -1,4 +1,4 @@
-package com.tome.android.Image;
+package com.tome.android.Image.config;
 
 public interface ShapeMode {
     /**

@@ -8,7 +8,7 @@ import android.util.Log;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMOptions;
 import com.tome.android.BuildConfig;
-import com.tome.android.Image.ImageLoader;
+import com.tome.android.Image.loader.ImageLoader;
 
 import java.util.Iterator;
 import java.util.List;
