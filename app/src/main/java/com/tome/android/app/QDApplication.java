@@ -8,6 +8,7 @@ import android.util.Log;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMOptions;
 import com.tome.android.BuildConfig;
+import com.tome.android.Image.ImageLoader;
 
 import java.util.Iterator;
 import java.util.List;
@@ -22,7 +23,7 @@ public class QDApplication extends Application{
         super.onCreate();
         Log.d(TAG, "onCreate: ");
         initHuanXin();
-
+        ImageLoader.init(getApplicationContext());
     }
 
     private void initHuanXin() {
@@ -47,6 +48,18 @@ public class QDApplication extends Application{
         if (BuildConfig.DEBUG) {
             EMClient.getInstance().setDebugMode(true);
         }
+    }
+
+    @Override
+    public void onTrimMemory(int level) {
+        super.onTrimMemory(level);
+        ImageLoader.trimMemory(level);
+    }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        ImageLoader.clearAllMemoryCaches();
     }
 
     private String getAppName(int pID) {
