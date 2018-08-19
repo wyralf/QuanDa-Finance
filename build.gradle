@@ -1,7 +1,15 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
-    
+    ext.versions = [
+            'minSdk'        : 16,
+            'targetSdk'     : 27,
+            'compileSdk'    : 27,
+            'versionCode'   : 1,
+            'versionName'   : '1.0',
+            'supportLibrary': '27.0.2',
+            'androidTools'  : '27.0.3',
+    ]
     repositories {
         google()
         jcenter()
