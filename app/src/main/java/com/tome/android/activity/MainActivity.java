@@ -9,7 +9,6 @@ import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 import com.tome.android.R;
 import com.tome.android.factory.FragmentFactory;
-import com.tome.modulebase.BaseActivity;
 
 import butterknife.BindView;
 

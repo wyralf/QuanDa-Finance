@@ -1,7 +1,5 @@
 package com.tome.android.activity;
 
-import com.tome.modulebase.BaseActivity;
-
 /**
  * Created by zhangyufei
  */

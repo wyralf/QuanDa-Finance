@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.tome.android.R;
-import com.tome.modulebase.BaseActivity;
 
 import java.util.ArrayList;
 

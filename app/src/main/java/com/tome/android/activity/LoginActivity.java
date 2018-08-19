@@ -16,7 +16,6 @@ import com.tome.android.R;
 import com.tome.android.presenter.LoginPresenter;
 import com.tome.android.presenterimpl.LoginPresenterImpl;
 import com.tome.android.view.LoginView;
-import com.tome.modulebase.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
