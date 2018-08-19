@@ -4,7 +4,7 @@ import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
 import com.tome.android.adapter.EMCallBackAdapter;
 import com.tome.android.presenter.ChatPresenter;
-import com.tome.android.utils.ThreadUtils;
+import com.tome.modulebase.utils.ThreadUtils;
 import com.tome.android.view.ChatView;
 
 import java.util.ArrayList;

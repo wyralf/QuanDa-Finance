@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
 import com.tome.android.R;
@@ -21,7 +20,7 @@ import com.tome.android.adapter.TextWatcherAdapter;
 import com.tome.android.app.Constants;
 import com.tome.android.presenter.ChatPresenter;
 import com.tome.android.presenterimpl.ChatPresenterImpl;
-import com.tome.android.utils.ThreadUtils;
+import com.tome.modulebase.utils.ThreadUtils;
 import com.tome.android.view.ChatView;
 
 import java.util.List;

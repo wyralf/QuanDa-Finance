@@ -3,8 +3,8 @@ package com.tome.android.presenterimpl;
 import com.hyphenate.chat.EMClient;
 import com.tome.android.adapter.EMCallBackAdapter;
 import com.tome.android.presenter.LoginPresenter;
-import com.tome.android.utils.StringUtils;
-import com.tome.android.utils.ThreadUtils;
+import com.tome.modulebase.utils.StringUtils;
+import com.tome.modulebase.utils.ThreadUtils;
 import com.tome.android.view.LoginView;
 
 /**

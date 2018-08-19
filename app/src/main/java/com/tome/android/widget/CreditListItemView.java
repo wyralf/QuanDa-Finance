@@ -8,8 +8,8 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.tome.android.Image.config.ScaleMode;
-import com.tome.android.Image.loader.ImageLoader;
+import com.tome.modulebase.Image.config.ScaleMode;
+import com.tome.modulebase.Image.loader.ImageLoader;
 import com.tome.android.R;
 import com.tome.android.model.CreditItem;
 
