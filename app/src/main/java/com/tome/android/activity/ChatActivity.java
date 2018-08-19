@@ -20,6 +20,7 @@ import com.tome.android.adapter.TextWatcherAdapter;
 import com.tome.android.app.Constants;
 import com.tome.android.presenter.ChatPresenter;
 import com.tome.android.presenterimpl.ChatPresenterImpl;
+import com.tome.modulebase.BaseActivity;
 import com.tome.modulebase.utils.ThreadUtils;
 import com.tome.android.view.ChatView;
 

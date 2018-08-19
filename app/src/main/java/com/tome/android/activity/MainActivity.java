@@ -1,28 +1,22 @@
 package com.tome.android.activity;
 
 import android.support.annotation.IdRes;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
-import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.RelativeLayout;
 
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 import com.tome.android.R;
 import com.tome.android.factory.FragmentFactory;
-import com.tome.android.fragment.ListFragment;
-import com.tome.android.fragment.MyTabFragment;
+import com.tome.modulebase.BaseActivity;
 
 import butterknife.BindView;
-import butterknife.OnClick;
 
 /**
  * Created by zhangyufei
  */
-public class MainActivity extends BaseActivity{
+public class MainActivity extends BaseActivity {
     @BindView(R.id.fragment_container)
     FrameLayout mFragmentContainer;
     @BindView(R.id.bottomBar)

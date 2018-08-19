@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.tome.android.R;
+import com.tome.modulebase.BaseActivity;
 
 import java.util.ArrayList;
 
@@ -15,7 +16,7 @@ import butterknife.BindView;
 /**
  * Created by zhangyufei
  */
-public class GuideActivity extends BaseActivity{
+public class GuideActivity extends BaseActivity {
     @BindView(R.id.viewPager)
     ViewPager viewPager;
     /**装分页显示的view的数组*/

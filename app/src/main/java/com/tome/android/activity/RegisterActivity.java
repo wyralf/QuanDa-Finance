@@ -10,6 +10,7 @@ import com.tome.android.R;
 import com.tome.android.presenter.RegisterPresenter;
 import com.tome.android.presenterimpl.RegisterPresenterImpl;
 import com.tome.android.view.RegisterView;
+import com.tome.modulebase.BaseActivity;
 
 import butterknife.BindView;
 import butterknife.OnClick;
