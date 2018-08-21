@@ -1,11 +1,10 @@
-package com.tome.android.presenterimpl;
+package com.tome.im.presenter;
 
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
-import com.tome.android.adapter.EMCallBackAdapter;
-import com.tome.android.presenter.ChatPresenter;
+import com.tome.im.view.ChatView;
+import com.tome.im.adapter.EMCallBackAdapter;
 import com.tome.modulebase.utils.ThreadUtils;
-import com.tome.android.view.ChatView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,7 @@ import java.util.List;
 /**
  * Created by zhangyufei
  */
-public class ChatPresenterImpl implements ChatPresenter{
+public class ChatPresenterImpl implements ChatPresenter {
 
     private ChatView mChatView;
 

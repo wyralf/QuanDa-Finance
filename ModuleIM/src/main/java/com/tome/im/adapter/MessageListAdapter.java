@@ -1,4 +1,4 @@
-package com.tome.android.adapter;
+package com.tome.im.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -6,8 +6,8 @@ import android.view.ViewGroup;
 
 import com.hyphenate.chat.EMMessage;
 import com.hyphenate.util.DateUtils;
-import com.tome.android.widget.ReceiveMessageItemView;
-import com.tome.android.widget.SendMessageItemView;
+import com.tome.im.widget.ReceiveMessageItemView;
+import com.tome.im.widget.SendMessageItemView;
 
 import java.util.List;
 

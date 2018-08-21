@@ -1,4 +1,4 @@
-package com.tome.android.adapter;
+package com.tome.im.adapter;
 
 import android.text.Editable;
 import android.text.TextWatcher;

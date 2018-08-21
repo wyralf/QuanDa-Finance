@@ -37,4 +37,5 @@ dependencies {
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'org.greenrobot:greendao:3.2.0'
     compile 'com.jakewharton:butterknife:8.8.1'
+    compile 'com.hyphenate:hyphenate-sdk-lite:3.4.3'
 }

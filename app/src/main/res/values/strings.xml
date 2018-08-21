@@ -30,7 +30,6 @@
     <string name="search">搜索</string>
     <string name="title">贷款名称</string>
     <string name="call">客服</string>
-    <string name="no_text_message">非文本消息</string>
     <string name="get_contacts_error">获取最新联系人失败</string>
     <string name="add_friend">添加好友</string>
     <string name="searching">拼命搜索中...</string>
@@ -46,15 +45,9 @@
     <string name="deleting_friend">正在删除好友...</string>
     <string name="delete_friend_failed">删除好友失败，请重试</string>
     <string name="delete_friend_success">删除好友成功</string>
-    <string name="send">发送</string>
-    <string name="chat_with">与%s聊天中</string>
-    <string name="sending">正在发送...</string>
-    <string name="send_success">发送成功</string>
-    <string name="send_failed">发送失败</string>
     <string name="get_new_message">获取到新消息</string>
     <string name="load_data_success">加载数据成功</string>
     <string name="load_more_data_success">加载更多数据成功</string>
-    <string name="no_more_data">没有更多数据</string>
     <string name="load_conversations_success">加载会话成功</string>
     <string name="max_unread_count">99+</string>
     <string name="receive_new_message">收到新消息</string>

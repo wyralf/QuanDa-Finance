@@ -1,4 +1,4 @@
-package com.tome.android.widget;
+package com.tome.im.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,7 +10,8 @@ import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMMessageBody;
 import com.hyphenate.chat.EMTextMessageBody;
 import com.hyphenate.util.DateUtils;
-import com.tome.android.R;
+import com.tome.im.R;
+import com.tome.im.R2;
 
 import java.util.Date;
 
@@ -22,9 +23,9 @@ import butterknife.ButterKnife;
  */
 public class ReceiveMessageItemView extends RelativeLayout {
 
-    @BindView(R.id.timestamp)
+    @BindView(R2.id.timestamp)
     TextView mTimestamp;
-    @BindView(R.id.receive_message)
+    @BindView(R2.id.receive_message)
     TextView mReceiveMessage;
 
     public ReceiveMessageItemView(Context context) {

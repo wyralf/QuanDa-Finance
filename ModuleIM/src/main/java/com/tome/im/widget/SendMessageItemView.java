@@ -1,4 +1,4 @@
-package com.tome.android.widget;
+package com.tome.im.widget;
 
 import android.content.Context;
 import android.graphics.drawable.AnimationDrawable;
@@ -12,7 +12,8 @@ import com.hyphenate.chat.EMMessage;
 import com.hyphenate.chat.EMMessageBody;
 import com.hyphenate.chat.EMTextMessageBody;
 import com.hyphenate.util.DateUtils;
-import com.tome.android.R;
+import com.tome.im.R;
+import com.tome.im.R2;
 
 import java.util.Date;
 
@@ -24,11 +25,11 @@ import butterknife.ButterKnife;
  */
 public class SendMessageItemView extends RelativeLayout {
 
-    @BindView(R.id.send_message)
+    @BindView(R2.id.send_message)
     TextView mSendMessage;
-    @BindView(R.id.send_message_progress)
+    @BindView(R2.id.send_message_progress)
     ImageView mSendMessageProgress;
-    @BindView(R.id.timestamp)
+    @BindView(R2.id.timestamp)
     TextView mTimestamp;
 
     public SendMessageItemView(Context context) {
@@ -71,19 +72,20 @@ public class SendMessageItemView extends RelativeLayout {
     }
 
     private void updateSendingStatus(EMMessage emMessage) {
-        switch (emMessage.status()) {
-            case INPROGRESS:
-                mSendMessageProgress.setVisibility(VISIBLE);
-                mSendMessageProgress.setImageResource(R.drawable.send_message_progress);
-                AnimationDrawable drawable = (AnimationDrawable) mSendMessageProgress.getDrawable();
-                drawable.start();
-                break;
-            case SUCCESS:
-                mSendMessageProgress.setVisibility(GONE);
-                break;
-            case FAIL:
-                mSendMessageProgress.setImageResource(R.mipmap.msg_error);
-                break;
+        if(emMessage == null){
+            return;
+        }
+        if(emMessage.status() == EMMessage.Status.INPROGRESS){
+            mSendMessageProgress.setVisibility(VISIBLE);
+            mSendMessageProgress.setImageResource(R.drawable.send_message_progress);
+            AnimationDrawable drawable = (AnimationDrawable) mSendMessageProgress.getDrawable();
+            drawable.start();
+        }
+        if(emMessage.status() == EMMessage.Status.SUCCESS){
+            mSendMessageProgress.setVisibility(GONE);
+        }
+        if(emMessage.status() == EMMessage.Status.FAIL){
+            mSendMessageProgress.setImageResource(R.mipmap.msg_error);
         }
     }
 }

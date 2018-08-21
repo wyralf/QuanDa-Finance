@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="bg_splash">#65A8E8</color>
+    <color name="yellow_color">#ffe2b5</color>
+    <color name="orange_color">#FF921B</color>
+    <color name="blue_color">#00acff</color>
+    <color name="blue_pressed">#00a1db</color>
+    <color name="blue_disabled">#559c9c9c</color>
+    <color name="common_bg">#fcfcfc</color>
+    <color name="bottom_bar_normal_bg">#2D2F31</color>
+    <color name="common_bottom_bar_normal_bg">#2d2f31</color>
+    <color name="common_bottom_bar_selected_bg">#161718</color>
+    <color name="gray_color">#e8e8e8</color>
+    <color name="gray_dark">#9c9c9c</color>
+</resources>

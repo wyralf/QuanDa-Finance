@@ -51,7 +51,7 @@
             android:screenOrientation="portrait"></activity>
         <activity android:name=".activity.RegisterActivity"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".activity.ChatActivity"
+        <activity android:name="com.tome.im.activity.ChatActivity"
             android:screenOrientation="portrait"></activity>
     </application>
 

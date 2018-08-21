@@ -1,4 +1,4 @@
-package com.tome.android.adapter;
+package com.tome.im.adapter;
 
 import com.hyphenate.EMCallBack;
 

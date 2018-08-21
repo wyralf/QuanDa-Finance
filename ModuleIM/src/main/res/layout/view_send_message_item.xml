@@ -23,7 +23,7 @@
             android:id="@id/avatar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@mipmap/avatar6"
+            android:src="@mipmap/avatar1"
             android:layout_margin="8dp"
             android:layout_alignParentRight="true"/>
 

@@ -1,4 +1,4 @@
-package com.tome.android.activity;
+package com.tome.im.activity;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -13,32 +13,33 @@ import android.widget.TextView;
 
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
-import com.tome.android.R;
-import com.tome.android.adapter.EMMessageListenerAdapter;
-import com.tome.android.adapter.MessageListAdapter;
-import com.tome.android.adapter.TextWatcherAdapter;
+import com.tome.im.presenter.ChatPresenter;
+import com.tome.im.presenter.ChatPresenterImpl;
+import com.tome.im.view.ChatView;
+import com.tome.im.R;
+import com.tome.im.R2;
+import com.tome.im.adapter.EMMessageListenerAdapter;
+import com.tome.im.adapter.MessageListAdapter;
+import com.tome.im.adapter.TextWatcherAdapter;
 import com.tome.modulebase.BaseActivity;
 import com.tome.modulebase.Constants;
-import com.tome.android.presenter.ChatPresenter;
-import com.tome.android.presenterimpl.ChatPresenterImpl;
 import com.tome.modulebase.utils.ThreadUtils;
-import com.tome.android.view.ChatView;
 
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class ChatActivity extends BaseActivity implements ChatView{
-    @BindView(R.id.title)
+public class ChatActivity extends BaseActivity implements ChatView {
+    @BindView(R2.id.title)
     TextView mTitle;
-    @BindView(R.id.recycler_view)
+    @BindView(R2.id.recycler_view)
     RecyclerView mRecyclerView;
-    @BindView(R.id.edit)
+    @BindView(R2.id.edit)
     EditText mEdit;
-    @BindView(R.id.send)
+    @BindView(R2.id.send)
     Button mSend;
-    @BindView(R.id.back)
+    @BindView(R2.id.back)
     ImageView mBack;
 
     private ChatPresenter mChatPresenter;
@@ -113,15 +114,13 @@ public class ChatActivity extends BaseActivity implements ChatView{
         toast(getString(R.string.no_more_data));
     }
 
-    @OnClick({R.id.back, R.id.send})
+    @OnClick({R2.id.back, R2.id.send})
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.back:
-                finish();
-                break;
-            case R.id.send:
-                sendMessage();
-                break;
+        int i = view.getId();
+        if(i == R.id.back){
+            finish();
+        }else if(i == R.id.send){
+            sendMessage();
         }
     }
 
