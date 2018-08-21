@@ -7,7 +7,7 @@ import android.support.v7.widget.RecyclerView;
 import com.tome.android.R;
 import com.tome.android.activity.ChatActivity;
 import com.tome.android.adapter.CreditListAdapter;
-import com.tome.android.app.Constants;
+import com.tome.modulebase.Constants;
 import com.tome.android.presenter.CreditPresenter;
 import com.tome.android.presenterimpl.CreditPresenterImpl;
 import com.tome.android.view.CreditView;

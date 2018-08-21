@@ -1,4 +1,4 @@
-package com.tome.android.activity;
+package com.tome.modulebase;
 
 import android.app.ProgressDialog;
 import android.content.Context;

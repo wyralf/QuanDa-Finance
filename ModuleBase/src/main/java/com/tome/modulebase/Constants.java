@@ -1,4 +1,4 @@
-package com.tome.android.app;
+package com.tome.modulebase;
 
 /**
  * Created by zhangyufei
