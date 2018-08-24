@@ -1,11 +1,10 @@
-package com.tome.android.presenterimpl;
+package com.tome.moduleuser.presenter;
 
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.exceptions.HyphenateException;
-import com.tome.android.presenter.RegisterPresenter;
 import com.tome.modulebase.utils.StringUtils;
 import com.tome.modulebase.utils.ThreadUtils;
-import com.tome.android.view.RegisterView;
+import com.tome.moduleuser.view.RegisterView;
 
 /**
  * Created by zhangyufei

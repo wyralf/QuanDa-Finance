@@ -1,4 +1,4 @@
-package com.tome.android.view;
+package com.tome.moduleuser.view;
 
 /**
  * Created by zhangyufei

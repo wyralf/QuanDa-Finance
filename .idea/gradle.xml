@@ -10,6 +10,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/ModuleBase" />
             <option value="$PROJECT_DIR$/ModuleIM" />
+            <option value="$PROJECT_DIR$/ModuleUser" />
             <option value="$PROJECT_DIR$/app" />
           </set>
         </option>

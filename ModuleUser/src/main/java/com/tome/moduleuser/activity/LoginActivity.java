@@ -1,4 +1,4 @@
-package com.tome.android.activity;
+package com.tome.moduleuser.activity;
 
 import android.Manifest;
 import android.support.annotation.NonNull;
@@ -12,11 +12,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.tome.android.R;
-import com.tome.android.presenter.LoginPresenter;
-import com.tome.android.presenterimpl.LoginPresenterImpl;
-import com.tome.android.view.LoginView;
 import com.tome.modulebase.BaseActivity;
+import com.tome.moduleuser.R;
+import com.tome.moduleuser.R2;
+import com.tome.moduleuser.presenter.LoginPresenter;
+import com.tome.moduleuser.presenter.LoginPresenterImpl;
+import com.tome.moduleuser.view.LoginView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -24,15 +25,15 @@ import butterknife.OnClick;
 /**
  * Created by zhangyufei
  */
-public class LoginActivity extends BaseActivity implements LoginView{
+public class LoginActivity extends BaseActivity implements LoginView {
     private static final int REQUEST_WRITE_EXTERNAL_STORAGE = 0;
-    @BindView(R.id.user_name)
+    @BindView(R2.id.user_name)
     EditText mUserName;
-    @BindView(R.id.password)
+    @BindView(R2.id.password)
     EditText mPassword;
-    @BindView(R.id.login)
+    @BindView(R2.id.login)
     Button mLogin;
-    @BindView(R.id.new_user)
+    @BindView(R2.id.new_user)
     TextView mNewUser;
 
     private LoginPresenter mLoginPresenter;
@@ -49,15 +50,13 @@ public class LoginActivity extends BaseActivity implements LoginView{
         return R.layout.activity_login;
     }
 
-    @OnClick({R.id.login, R.id.new_user})
+    @OnClick({R2.id.login, R2.id.new_user})
     public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.login:
-                startLogin();
-                break;
-            case R.id.new_user:
-                startActivity(RegisterActivity.class, false);
-                break;
+        int i = view.getId();
+        if(i == R.id.login){
+            startLogin();
+        }else if(i == R.id.new_user){
+            startActivity(RegisterActivity.class, false);
         }
     }
 
@@ -103,7 +102,7 @@ public class LoginActivity extends BaseActivity implements LoginView{
     public void onLoginSuccess() {
         hideProgress();
         toast(getString(R.string.login_success));
-        startActivity(MainActivity.class);
+        //startActivity(MainActivity.class);
     }
 
     @Override

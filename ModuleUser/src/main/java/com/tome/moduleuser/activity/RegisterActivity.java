@@ -1,4 +1,4 @@
-package com.tome.android.activity;
+package com.tome.moduleuser.activity;
 
 import android.view.KeyEvent;
 import android.view.inputmethod.EditorInfo;
@@ -6,11 +6,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.tome.android.R;
-import com.tome.android.presenter.RegisterPresenter;
-import com.tome.android.presenterimpl.RegisterPresenterImpl;
-import com.tome.android.view.RegisterView;
 import com.tome.modulebase.BaseActivity;
+import com.tome.moduleuser.R;
+import com.tome.moduleuser.R2;
+import com.tome.moduleuser.presenter.RegisterPresenter;
+import com.tome.moduleuser.presenter.RegisterPresenterImpl;
+import com.tome.moduleuser.view.RegisterView;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -18,14 +19,14 @@ import butterknife.OnClick;
 /**
  * Created by zhangyufei
  */
-public class RegisterActivity extends BaseActivity implements RegisterView{
-    @BindView(R.id.user_name)
+public class RegisterActivity extends BaseActivity implements RegisterView {
+    @BindView(R2.id.user_name)
     EditText mUserName;
-    @BindView(R.id.password)
+    @BindView(R2.id.password)
     EditText mPassword;
-    @BindView(R.id.confirm_password)
+    @BindView(R2.id.confirm_password)
     EditText mConfirmPassword;
-    @BindView(R.id.register)
+    @BindView(R2.id.register)
     Button mRegister;
 
     private RegisterPresenter mRegisterPresenter;
@@ -99,7 +100,7 @@ public class RegisterActivity extends BaseActivity implements RegisterView{
         mRegisterPresenter.register(userName, password, confirmPassword);
     }
 
-    @OnClick(R.id.register)
+    @OnClick(R2.id.register)
     public void onClick() {
         register();
     }

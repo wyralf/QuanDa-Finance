@@ -1,11 +1,10 @@
-package com.tome.android.presenterimpl;
+package com.tome.moduleuser.presenter;
 
 import com.hyphenate.chat.EMClient;
-import com.tome.im.adapter.EMCallBackAdapter;
-import com.tome.android.presenter.LoginPresenter;
 import com.tome.modulebase.utils.StringUtils;
 import com.tome.modulebase.utils.ThreadUtils;
-import com.tome.android.view.LoginView;
+import com.tome.moduleuser.adapter.EMCallAdapter;
+import com.tome.moduleuser.view.LoginView;
 
 /**
  * Created by zhangyufei
@@ -34,7 +33,7 @@ public class LoginPresenterImpl implements LoginPresenter{
         EMClient.getInstance().login(userName, pwd, mEMCallBack);
     }
 
-    private EMCallBackAdapter mEMCallBack = new EMCallBackAdapter() {
+    private EMCallAdapter mEMCallBack = new EMCallAdapter() {
 
         @Override
         public void onSuccess() {

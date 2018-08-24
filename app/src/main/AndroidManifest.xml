@@ -44,12 +44,12 @@
             </intent-filter>
         </receiver>
 
-        <activity android:name=".activity.LoginActivity"
+        <activity android:name="com.tome.moduleuser.activity.LoginActivity"
             android:screenOrientation="portrait"></activity>
         <activity android:name=".activity.MainActivity"
             android:windowSoftInputMode="adjustPan|stateHidden"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".activity.RegisterActivity"
+        <activity android:name="com.tome.moduleuser.activity.RegisterActivity"
             android:screenOrientation="portrait"></activity>
         <activity android:name="com.tome.im.activity.ChatActivity"
             android:screenOrientation="portrait"></activity>
