@@ -12,6 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.chenenyu.router.Router;
 import com.tome.modulebase.BaseActivity;
 import com.tome.moduleuser.R;
 import com.tome.moduleuser.R2;
@@ -102,7 +103,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
     public void onLoginSuccess() {
         hideProgress();
         toast(getString(R.string.login_success));
-        //startActivity(MainActivity.class);
+        Router.build("main").go(this);
     }
 
     @Override

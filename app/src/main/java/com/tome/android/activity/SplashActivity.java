@@ -2,6 +2,7 @@ package com.tome.android.activity;
 
 import android.os.Handler;
 
+import com.chenenyu.router.Router;
 import com.tome.android.R;
 import com.tome.android.presenter.SplashPresenter;
 import com.tome.android.presenterimpl.SplashPresenterImpl;
@@ -33,7 +34,7 @@ public class SplashActivity extends BaseActivity implements SplashView{
 
     @Override
     public void onLoggedIn() {
-        startActivity(MainActivity.class);
+        Router.build("main").go(SplashActivity.this);
     }
 
     @Override
@@ -41,7 +42,7 @@ public class SplashActivity extends BaseActivity implements SplashView{
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(MainActivity.class);
+                Router.build("main").go(SplashActivity.this);
             }
         }, DELAY_TIME);
     }

@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.widget.FrameLayout;
 
+import com.chenenyu.router.annotation.Route;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
 import com.tome.android.R;
@@ -16,6 +17,7 @@ import butterknife.BindView;
 /**
  * Created by zhangyufei
  */
+@Route(value = "main")
 public class MainActivity extends BaseActivity {
     @BindView(R.id.fragment_container)
     FrameLayout mFragmentContainer;

@@ -11,6 +11,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.chenenyu.router.Router;
+import com.chenenyu.router.annotation.InjectParam;
+import com.chenenyu.router.annotation.Route;
 import com.hyphenate.chat.EMClient;
 import com.hyphenate.chat.EMMessage;
 import com.tome.im.presenter.ChatPresenter;
@@ -30,6 +33,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
+@Route(value = "chat")
 public class ChatActivity extends BaseActivity implements ChatView {
     @BindView(R2.id.title)
     TextView mTitle;
@@ -43,6 +47,7 @@ public class ChatActivity extends BaseActivity implements ChatView {
     ImageView mBack;
 
     private ChatPresenter mChatPresenter;
+    @InjectParam(key = Constants.Extra.USER_NAME)
     private String mUserName;
 
     private MessageListAdapter mMessageListAdapter;
@@ -51,8 +56,8 @@ public class ChatActivity extends BaseActivity implements ChatView {
     @Override
     protected void init() {
         super.init();
+        Router.injectParams(this);
         mChatPresenter = new ChatPresenterImpl(this);
-        mUserName = getIntent().getStringExtra(Constants.Extra.USER_NAME);
         String title = String.format(getString(R.string.chat_with), mUserName);
         mTitle.setText(title);
         mEdit.setOnEditorActionListener(mOnEditorActionListener);
