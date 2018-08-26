@@ -1,6 +1,4 @@
-package com.tome.android.model;
-
-import com.tome.android.R;
+package com.tome.main.model;
 
 /**
  * Created by zhangyufei

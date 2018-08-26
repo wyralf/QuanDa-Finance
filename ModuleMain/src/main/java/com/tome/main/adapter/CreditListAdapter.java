@@ -1,4 +1,4 @@
-package com.tome.android.adapter;
+package com.tome.main.adapter;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -6,8 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.tome.android.model.CreditItem;
-import com.tome.android.widget.CreditListItemView;
+import com.tome.main.model.CreditItem;
+import com.tome.main.widget.CreditListItemView;
 
 import java.util.List;
 

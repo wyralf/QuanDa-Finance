@@ -1,9 +1,9 @@
-package com.tome.android.factory;
+package com.tome.main.factory;
 
-import com.tome.android.R;
-import com.tome.android.fragment.BaseFragment;
-import com.tome.android.fragment.ListFragment;
-import com.tome.android.fragment.MyTabFragment;
+import com.tome.main.R;
+import com.tome.modulebase.BaseFragment;
+import com.tome.main.fragment.ListFragment;
+import com.tome.moduleuser.MyTabFragment;
 
 /**
  * Created by zhangyufei
@@ -28,11 +28,10 @@ public class FragmentFactory {
     }
 
     public BaseFragment getFragment(int id) {
-        switch (id) {
-            case R.id.list:
-                return getListFragment();
-            case R.id.my:
-                return getMytabFragment();
+        if(id == R.id.list){
+            return getListFragment();
+        }else if(id == R.id.my){
+            return getMytabFragment();
         }
         return null;
     }

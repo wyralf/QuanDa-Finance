@@ -1,26 +1,28 @@
-package com.tome.android.fragment;
+package com.tome.main.fragment;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.chenenyu.router.Router;
-import com.tome.android.R;
-import com.tome.android.adapter.CreditListAdapter;
+import com.tome.main.R;
+import com.tome.main.R2;
+import com.tome.main.adapter.CreditListAdapter;
+import com.tome.main.presenter.CreditPresenter;
+import com.tome.main.presenter.CreditPresenterImpl;
+import com.tome.main.view.CreditView;
+import com.tome.modulebase.BaseFragment;
 import com.tome.modulebase.Constants;
-import com.tome.android.presenter.CreditPresenter;
-import com.tome.android.presenterimpl.CreditPresenterImpl;
-import com.tome.android.view.CreditView;
 
 import butterknife.BindView;
 
 /**
  * Created by zhangyufei
  */
-public class ListFragment extends BaseFragment implements CreditView{
-    @BindView(R.id.recycler_view)
+public class ListFragment extends BaseFragment implements CreditView {
+    @BindView(R2.id.recycler_view)
     RecyclerView mRecyclerView;
-    @BindView(R.id.swipe_refresh_layout)
+    @BindView(R2.id.swipe_refresh_layout)
     SwipeRefreshLayout mSwipeRefreshLayout;
     private CreditListAdapter mCreditListAdapter;
 

@@ -1,4 +1,4 @@
-package com.tome.android.fragment;
+package com.tome.modulebase;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -52,20 +52,6 @@ public abstract class BaseFragment extends Fragment {
 
     protected void toast(String msg) {
         Toast.makeText(getContext(), msg, Toast.LENGTH_SHORT).show();
-    }
-
-    protected void startActivity(Class activity, String key, String extra) {
-        Intent intent = new Intent(getContext(), activity);
-        intent.putExtra(key, extra);
-        startActivity(intent);
-    }
-
-    protected void startActivity(Class activity, boolean finish) {
-        Intent intent = new Intent(getContext(), activity);
-        startActivity(intent);
-        if (finish) {
-            getActivity().finish();
-        }
     }
 
     @Override

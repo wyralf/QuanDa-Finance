@@ -1,6 +1,6 @@
-package com.tome.android.presenter;
+package com.tome.main.presenter;
 
-import com.tome.android.model.CreditItem;
+import com.tome.main.model.CreditItem;
 
 import java.util.List;
 

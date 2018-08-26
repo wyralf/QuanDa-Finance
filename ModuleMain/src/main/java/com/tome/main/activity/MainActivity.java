@@ -1,4 +1,4 @@
-package com.tome.android.activity;
+package com.tome.main.activity;
 
 import android.support.annotation.IdRes;
 import android.support.v4.app.FragmentManager;
@@ -8,8 +8,9 @@ import android.widget.FrameLayout;
 import com.chenenyu.router.annotation.Route;
 import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;
-import com.tome.android.R;
-import com.tome.android.factory.FragmentFactory;
+import com.tome.main.R;
+import com.tome.main.R2;
+import com.tome.main.factory.FragmentFactory;
 import com.tome.modulebase.BaseActivity;
 
 import butterknife.BindView;
@@ -19,9 +20,9 @@ import butterknife.BindView;
  */
 @Route(value = "main")
 public class MainActivity extends BaseActivity {
-    @BindView(R.id.fragment_container)
+    @BindView(R2.id.fragment_container)
     FrameLayout mFragmentContainer;
-    @BindView(R.id.bottomBar)
+    @BindView(R2.id.bottomBar)
     BottomBar mBottomBar;
 
     private FragmentManager mFragmentManager;

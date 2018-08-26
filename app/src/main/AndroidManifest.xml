@@ -46,7 +46,7 @@
 
         <activity android:name="com.tome.moduleuser.activity.LoginActivity"
             android:screenOrientation="portrait"></activity>
-        <activity android:name=".activity.MainActivity"
+        <activity android:name="com.tome.main.activity.MainActivity"
             android:windowSoftInputMode="adjustPan|stateHidden"
             android:screenOrientation="portrait"></activity>
         <activity android:name="com.tome.moduleuser.activity.RegisterActivity"

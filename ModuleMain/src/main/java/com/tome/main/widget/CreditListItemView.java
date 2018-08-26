@@ -1,4 +1,4 @@
-package com.tome.android.widget;
+package com.tome.main.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -8,10 +8,11 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.tome.main.R;
+import com.tome.main.R2;
 import com.tome.modulebase.Image.config.ScaleMode;
 import com.tome.modulebase.Image.loader.ImageLoader;
-import com.tome.android.R;
-import com.tome.android.model.CreditItem;
+import com.tome.main.model.CreditItem;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,15 +22,15 @@ import butterknife.ButterKnife;
  */
 public class CreditListItemView extends RelativeLayout {
     public static final String TAG = "ListItemView";
-    @BindView(R.id.avatar)
+    @BindView(R2.id.avatar)
     ImageView mAvatar;
-    @BindView(R.id.info_list)
+    @BindView(R2.id.info_list)
     LinearLayout mListLayout;
-    @BindView(R.id.name)
+    @BindView(R2.id.name)
     TextView mCreditName;
-    @BindView(R.id.limit)
+    @BindView(R2.id.limit)
     TextView mCreditLimit;
-    @BindView(R.id.interest)
+    @BindView(R2.id.interest)
     TextView mCreditInterest;
     Context mContext;
     public CreditListItemView(Context context) {

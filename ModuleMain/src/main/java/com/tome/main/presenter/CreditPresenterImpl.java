@@ -1,9 +1,7 @@
-package com.tome.android.presenterimpl;
+package com.tome.main.presenter;
 
-import com.tome.android.adapter.CreditListAdapter;
-import com.tome.android.model.CreditItem;
-import com.tome.android.presenter.CreditPresenter;
-import com.tome.android.view.CreditView;
+import com.tome.main.model.CreditItem;
+import com.tome.main.view.CreditView;
 
 import java.util.ArrayList;
 import java.util.List;
