@@ -23,7 +23,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile project(path: ':ModuleMain')
     compile project(path: ':ModuleBase')
-    compile project(path: ':ModuleIM')
     compile project(path: ':ModuleUser')
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
