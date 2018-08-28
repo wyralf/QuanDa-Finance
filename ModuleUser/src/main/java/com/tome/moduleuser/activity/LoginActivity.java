@@ -13,7 +13,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.chenenyu.router.Router;
+import com.chenenyu.router.annotation.Route;
 import com.tome.modulebase.BaseActivity;
+import com.tome.modulebase.RouterConstants;
 import com.tome.moduleuser.R;
 import com.tome.moduleuser.R2;
 import com.tome.moduleuser.presenter.LoginPresenter;
@@ -26,6 +28,7 @@ import butterknife.OnClick;
 /**
  * Created by zhangyufei
  */
+@Route(value = RouterConstants.ROUTER_LOGIN)
 public class LoginActivity extends BaseActivity implements LoginView {
     private static final int REQUEST_WRITE_EXTERNAL_STORAGE = 0;
     @BindView(R2.id.user_name)
@@ -57,7 +60,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
         if(i == R.id.login){
             startLogin();
         }else if(i == R.id.new_user){
-            startActivity(RegisterActivity.class, false);
+            startActivity(this, RouterConstants.ROUTER_REGISTER,false);
         }
     }
 
@@ -103,7 +106,7 @@ public class LoginActivity extends BaseActivity implements LoginView {
     public void onLoginSuccess() {
         hideProgress();
         toast(getString(R.string.login_success));
-        Router.build("main").go(this);
+        startActivity(this, RouterConstants.ROUTER_MAIN);
     }
 
     @Override

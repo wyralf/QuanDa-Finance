@@ -12,13 +12,14 @@ import com.tome.main.R;
 import com.tome.main.R2;
 import com.tome.main.factory.FragmentFactory;
 import com.tome.modulebase.BaseActivity;
+import com.tome.modulebase.RouterConstants;
 
 import butterknife.BindView;
 
 /**
  * Created by zhangyufei
  */
-@Route(value = "main")
+@Route(value = RouterConstants.ROUTER_MAIN)
 public class MainActivity extends BaseActivity {
     @BindView(R2.id.fragment_container)
     FrameLayout mFragmentContainer;

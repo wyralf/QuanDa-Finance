@@ -6,7 +6,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.chenenyu.router.annotation.Route;
 import com.tome.modulebase.BaseActivity;
+import com.tome.modulebase.RouterConstants;
 import com.tome.moduleuser.R;
 import com.tome.moduleuser.R2;
 import com.tome.moduleuser.presenter.RegisterPresenter;
@@ -19,6 +21,7 @@ import butterknife.OnClick;
 /**
  * Created by zhangyufei
  */
+@Route(value = RouterConstants.ROUTER_REGISTER)
 public class RegisterActivity extends BaseActivity implements RegisterView {
     @BindView(R2.id.user_name)
     EditText mUserName;
@@ -63,7 +66,7 @@ public class RegisterActivity extends BaseActivity implements RegisterView {
     public void onRegisterSuccess() {
         hideProgress();
         toast(getString(R.string.register_success));
-        startActivity(LoginActivity.class);
+        startActivity(this, RouterConstants.ROUTER_LOGIN);
     }
 
     @Override

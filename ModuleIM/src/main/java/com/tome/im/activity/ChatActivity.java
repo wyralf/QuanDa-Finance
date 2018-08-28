@@ -26,6 +26,7 @@ import com.tome.im.adapter.MessageListAdapter;
 import com.tome.im.adapter.TextWatcherAdapter;
 import com.tome.modulebase.BaseActivity;
 import com.tome.modulebase.Constants;
+import com.tome.modulebase.RouterConstants;
 import com.tome.modulebase.utils.ThreadUtils;
 
 import java.util.List;
@@ -33,7 +34,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-@Route(value = "chat")
+@Route(value = RouterConstants.ROUTER_CHAT)
 public class ChatActivity extends BaseActivity implements ChatView {
     @BindView(R2.id.title)
     TextView mTitle;

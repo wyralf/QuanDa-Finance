@@ -13,6 +13,7 @@ import com.tome.main.presenter.CreditPresenterImpl;
 import com.tome.main.view.CreditView;
 import com.tome.modulebase.BaseFragment;
 import com.tome.modulebase.Constants;
+import com.tome.modulebase.RouterConstants;
 
 import butterknife.BindView;
 
@@ -50,7 +51,7 @@ public class ListFragment extends BaseFragment implements CreditView {
         @Override
         public void onItemClick(String name) {
             // 简单跳转
-            Router.build("chat").with(Constants.Extra.USER_NAME, name).go(getActivity());
+            Router.build(RouterConstants.ROUTER_CHAT).with(Constants.Extra.USER_NAME, name).go(getActivity());
 
         }
 

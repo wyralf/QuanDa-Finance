@@ -9,6 +9,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 
+import com.chenenyu.router.Router;
+
 import butterknife.ButterKnife;
 
 /**
@@ -33,13 +35,15 @@ public abstract class BaseActivity extends AppCompatActivity{
 
     public abstract int getLayoutRes();
 
-    protected void startActivity(Class activity) {
-        startActivity(activity, true);
+    /*
+     * activity的跳转采用这种形式
+     */
+    protected void startActivity(Context context, String routerName) {
+        startActivity(context, routerName, true);
     }
 
-    protected void startActivity(Class activity, boolean finish) {
-        Intent intent = new Intent(this, activity);
-        startActivity(intent);
+    protected void startActivity(Context context, String routerName, boolean finish) {
+        Router.build(routerName).go(context);
         if (finish) {
             finish();
         }

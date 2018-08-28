@@ -8,6 +8,7 @@ import com.tome.android.presenter.SplashPresenter;
 import com.tome.android.presenterimpl.SplashPresenterImpl;
 import com.tome.android.view.SplashView;
 import com.tome.modulebase.BaseActivity;
+import com.tome.modulebase.RouterConstants;
 
 /**
  * Created by zhangyufei
@@ -34,7 +35,7 @@ public class SplashActivity extends BaseActivity implements SplashView{
 
     @Override
     public void onLoggedIn() {
-        Router.build("main").go(SplashActivity.this);
+        startActivity(SplashActivity.this, RouterConstants.ROUTER_MAIN);
     }
 
     @Override
@@ -42,7 +43,7 @@ public class SplashActivity extends BaseActivity implements SplashView{
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Router.build("main").go(SplashActivity.this);
+                startActivity(SplashActivity.this, RouterConstants.ROUTER_MAIN);
             }
         }, DELAY_TIME);
     }
