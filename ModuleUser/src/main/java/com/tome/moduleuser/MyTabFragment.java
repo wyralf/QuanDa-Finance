@@ -1,7 +1,7 @@
 package com.tome.moduleuser;
 
 
-import com.tome.modulebase.BaseFragment;
+import com.tome.modulebase.control.BaseFragment;
 
 public class MyTabFragment extends BaseFragment {
     @Override

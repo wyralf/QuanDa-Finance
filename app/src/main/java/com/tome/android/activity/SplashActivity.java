@@ -2,13 +2,12 @@ package com.tome.android.activity;
 
 import android.os.Handler;
 
-import com.chenenyu.router.Router;
 import com.tome.android.R;
 import com.tome.android.presenter.SplashPresenter;
 import com.tome.android.presenterimpl.SplashPresenterImpl;
 import com.tome.android.view.SplashView;
-import com.tome.modulebase.BaseActivity;
-import com.tome.modulebase.RouterConstants;
+import com.tome.modulebase.control.BaseActivity;
+import com.tome.modulebase.Constant.RouterConstants;
 
 /**
  * Created by zhangyufei

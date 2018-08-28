@@ -1,7 +1,7 @@
 package com.tome.main.factory;
 
 import com.tome.main.R;
-import com.tome.modulebase.BaseFragment;
+import com.tome.modulebase.control.BaseFragment;
 import com.tome.main.fragment.ListFragment;
 import com.tome.moduleuser.MyTabFragment;
 

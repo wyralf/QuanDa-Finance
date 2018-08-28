@@ -11,9 +11,9 @@ import com.tome.main.adapter.CreditListAdapter;
 import com.tome.main.presenter.CreditPresenter;
 import com.tome.main.presenter.CreditPresenterImpl;
 import com.tome.main.view.CreditView;
-import com.tome.modulebase.BaseFragment;
-import com.tome.modulebase.Constants;
-import com.tome.modulebase.RouterConstants;
+import com.tome.modulebase.control.BaseFragment;
+import com.tome.modulebase.Constant.Constants;
+import com.tome.modulebase.Constant.RouterConstants;
 
 import butterknife.BindView;
 

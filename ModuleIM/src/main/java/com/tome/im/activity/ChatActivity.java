@@ -24,9 +24,9 @@ import com.tome.im.R2;
 import com.tome.im.adapter.EMMessageListenerAdapter;
 import com.tome.im.adapter.MessageListAdapter;
 import com.tome.im.adapter.TextWatcherAdapter;
-import com.tome.modulebase.BaseActivity;
-import com.tome.modulebase.Constants;
-import com.tome.modulebase.RouterConstants;
+import com.tome.modulebase.control.BaseActivity;
+import com.tome.modulebase.Constant.Constants;
+import com.tome.modulebase.Constant.RouterConstants;
 import com.tome.modulebase.utils.ThreadUtils;
 
 import java.util.List;

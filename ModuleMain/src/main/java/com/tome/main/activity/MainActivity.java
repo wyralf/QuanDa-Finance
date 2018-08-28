@@ -11,8 +11,8 @@ import com.roughike.bottombar.OnTabSelectListener;
 import com.tome.main.R;
 import com.tome.main.R2;
 import com.tome.main.factory.FragmentFactory;
-import com.tome.modulebase.BaseActivity;
-import com.tome.modulebase.RouterConstants;
+import com.tome.modulebase.control.BaseActivity;
+import com.tome.modulebase.Constant.RouterConstants;
 
 import butterknife.BindView;
 

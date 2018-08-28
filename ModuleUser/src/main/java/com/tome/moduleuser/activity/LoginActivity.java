@@ -12,10 +12,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.chenenyu.router.Router;
 import com.chenenyu.router.annotation.Route;
-import com.tome.modulebase.BaseActivity;
-import com.tome.modulebase.RouterConstants;
+import com.tome.modulebase.control.BaseActivity;
+import com.tome.modulebase.Constant.RouterConstants;
 import com.tome.moduleuser.R;
 import com.tome.moduleuser.R2;
 import com.tome.moduleuser.presenter.LoginPresenter;

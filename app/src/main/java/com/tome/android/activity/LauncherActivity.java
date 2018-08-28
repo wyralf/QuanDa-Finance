@@ -1,6 +1,6 @@
 package com.tome.android.activity;
 
-import com.tome.modulebase.BaseActivity;
+import com.tome.modulebase.control.BaseActivity;
 
 /**
  * Created by zhangyufei

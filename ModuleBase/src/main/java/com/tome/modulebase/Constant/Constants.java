@@ -1,4 +1,4 @@
-package com.tome.modulebase;
+package com.tome.modulebase.Constant;
 
 /**
  * Created by zhangyufei
