@@ -1,6 +1,7 @@
 package com.tome.main.factory;
 
 import com.tome.main.R;
+import com.tome.main.fragment.MainFragment;
 import com.tome.modulebase.control.BaseFragment;
 import com.tome.main.fragment.ListFragment;
 import com.tome.moduleuser.MyTabFragment;
@@ -15,6 +16,7 @@ public class FragmentFactory {
 
     private BaseFragment mListFragment;
     private BaseFragment mMytabFragment;
+    private BaseFragment mMainFragment;
 
     public static FragmentFactory getInstance() {
         if (sFragmentFactory == null) {
@@ -32,6 +34,8 @@ public class FragmentFactory {
             return getListFragment();
         }else if(id == R.id.my){
             return getMytabFragment();
+        }else if(id == R.id.main){
+            return getMainFragment();
         }
         return null;
     }
@@ -47,6 +51,13 @@ public class FragmentFactory {
             mMytabFragment = new MyTabFragment();
         }
         return mMytabFragment;
+    }
+
+    public BaseFragment getMainFragment() {
+        if (mMainFragment == null) {
+            mMainFragment = new MainFragment();
+        }
+        return mMainFragment;
     }
 }
 
