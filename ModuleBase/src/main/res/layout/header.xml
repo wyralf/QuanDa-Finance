@@ -10,8 +10,7 @@
         android:layout_height="30dp"
         android:layout_centerVertical="true"
         android:layout_marginLeft="8dp"
-        android:src="@drawable/back_selector"
-        android:visibility="gone"/>
+        android:src="@drawable/back_selector" />
 
     <TextView
         android:id="@id/title"
