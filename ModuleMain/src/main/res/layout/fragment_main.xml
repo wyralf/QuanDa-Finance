@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <com.oragee.banners.BannerView
-        android:id="@+id/bv"
-        android:layout_width="match_parent"
-        android:layout_height="160dp">
-    </com.oragee.banners.BannerView>
-    <GridView
-        android:id="@+id/gv"
+<ScrollView android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:columnWidth="80dp"
-        android:stretchMode="spacingWidthUniform"
-        android:numColumns="4"
-        >
-    </GridView>
-</LinearLayout>
+        android:orientation="vertical">
+        <com.oragee.banners.BannerView
+            android:id="@+id/bv"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginBottom="20dp">
+        </com.oragee.banners.BannerView>
+        <GridView
+            android:id="@+id/gv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:columnWidth="80dp"
+            android:stretchMode="spacingWidthUniform"
+            android:numColumns="4"
+            >
+        </GridView>
+        <Button
+            android:id="@+id/main_btn"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="@string/match"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/gray_dark"
+            android:background="@color/blue_color"
+            android:layout_gravity="center_horizontal"/>
+
+    </LinearLayout>
+</ScrollView>

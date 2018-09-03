@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tabs>
+    <tab
+        id="@+id/main"
+        icon="@mipmap/em_conversation_normal"
+        title="@string/main_page"></tab>
 <tab
     id="@+id/list"
     icon="@mipmap/em_conversation_normal"
     title="@string/contact"/>
-<tab
-    id="@+id/main"
-    icon="@mipmap/em_conversation_normal"
-    title="@string/main_page"></tab>
 <tab
     id="@+id/my"
     icon="@mipmap/em_contact_list_normal"
