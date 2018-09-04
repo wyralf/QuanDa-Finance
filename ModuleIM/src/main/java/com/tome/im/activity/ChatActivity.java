@@ -49,7 +49,7 @@ public class ChatActivity extends BaseActivity implements ChatView {
 
     private ChatPresenter mChatPresenter;
     @InjectParam(key = Constants.Extra.USER_NAME)
-    private String mUserName;
+    String mUserName;
 
     private MessageListAdapter mMessageListAdapter;
 

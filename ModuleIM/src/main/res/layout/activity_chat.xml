@@ -47,4 +47,9 @@
 
     </LinearLayout>
 
+    <com.tome.im.widget.ChatInputMenu
+        android:id="@+id/input_menu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </LinearLayout>
