@@ -21,9 +21,10 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile project(path: ':ModuleMain')
-    compile project(path: ':ModuleBase')
-    compile project(path: ':ModuleUser')
+    implementation project(path: ':ModuleMain')
+    implementation project(path: ':ModuleBase')
+    implementation project(path: ':ModuleUser')
+    implementation project(path: ':ModuleIM')
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
 }

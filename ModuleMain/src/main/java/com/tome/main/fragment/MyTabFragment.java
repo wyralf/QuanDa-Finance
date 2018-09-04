@@ -1,6 +1,7 @@
-package com.tome.moduleuser;
+package com.tome.main.fragment;
 
 
+import com.tome.main.R;
 import com.tome.modulebase.control.BaseFragment;
 
 public class MyTabFragment extends BaseFragment {

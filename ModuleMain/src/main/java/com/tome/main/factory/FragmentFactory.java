@@ -4,7 +4,7 @@ import com.tome.main.R;
 import com.tome.main.fragment.MainFragment;
 import com.tome.modulebase.control.BaseFragment;
 import com.tome.main.fragment.ListFragment;
-import com.tome.moduleuser.MyTabFragment;
+import com.tome.main.fragment.MyTabFragment;
 
 /**
  * Created by zhangyufei
