@@ -4,6 +4,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
@@ -24,6 +25,7 @@ import com.tome.im.R2;
 import com.tome.im.adapter.EMMessageListenerAdapter;
 import com.tome.im.adapter.MessageListAdapter;
 import com.tome.im.adapter.TextWatcherAdapter;
+import com.tome.im.widget.ChatInputMenu;
 import com.tome.modulebase.control.BaseActivity;
 import com.tome.modulebase.Constant.Constants;
 import com.tome.modulebase.Constant.RouterConstants;
@@ -40,12 +42,10 @@ public class ChatActivity extends BaseActivity implements ChatView {
     TextView mTitle;
     @BindView(R2.id.recycler_view)
     RecyclerView mRecyclerView;
-    @BindView(R2.id.edit)
-    EditText mEdit;
-    @BindView(R2.id.send)
-    Button mSend;
     @BindView(R2.id.back)
     ImageView mBack;
+    @BindView(R2.id.input_menu)
+    ChatInputMenu inputMenu;
 
     private ChatPresenter mChatPresenter;
     @InjectParam(key = Constants.Extra.USER_NAME)
@@ -61,11 +61,25 @@ public class ChatActivity extends BaseActivity implements ChatView {
         mChatPresenter = new ChatPresenterImpl(this);
         String title = String.format(getString(R.string.chat_with), mUserName);
         mTitle.setText(title);
-        mEdit.setOnEditorActionListener(mOnEditorActionListener);
-        mEdit.addTextChangedListener(mTextWatcher);
         initRecyclerView();
         EMClient.getInstance().chatManager().addMessageListener(mEMMessageListener);
         mChatPresenter.loadMessages(mUserName);
+        // init input menu
+        inputMenu.init();
+        inputMenu.setChatInputMenuListener(new ChatInputMenu.ChatInputMenuListener() {
+
+
+            @Override
+            public void onSendMessage(String content) {
+                // 发送文本消息
+                sendTextMessage(content);
+            }
+
+            @Override
+            public boolean onPressToSpeakBtnTouch(View v, MotionEvent event) {
+                return false;
+            }
+        });
     }
 
     private void initRecyclerView() {
@@ -120,13 +134,11 @@ public class ChatActivity extends BaseActivity implements ChatView {
         toast(getString(R.string.no_more_data));
     }
 
-    @OnClick({R2.id.back, R2.id.send})
+    @OnClick({R2.id.back})
     public void onClick(View view) {
         int i = view.getId();
         if(i == R.id.back){
             finish();
-        }else if(i == R.id.send){
-            sendMessage();
         }
     }
 
@@ -144,9 +156,9 @@ public class ChatActivity extends BaseActivity implements ChatView {
     };
 
     private void sendMessage() {
-        mChatPresenter.sendMessage(mUserName, mEdit.getText().toString().trim());
+        mChatPresenter.sendMessage(mUserName, "name");
         hideKeyBoard();
-        mEdit.getText().clear();
+        //mEdit.getText().clear();
     }
 
     private TextView.OnEditorActionListener mOnEditorActionListener = new TextView.OnEditorActionListener() {
@@ -157,13 +169,6 @@ public class ChatActivity extends BaseActivity implements ChatView {
                 return true;
             }
             return false;
-        }
-    };
-
-    private TextWatcherAdapter mTextWatcher = new TextWatcherAdapter() {
-        @Override
-        public void afterTextChanged(Editable s) {
-            mSend.setEnabled(s.length() != 0);
         }
     };
 
@@ -196,5 +201,12 @@ public class ChatActivity extends BaseActivity implements ChatView {
     protected void onDestroy() {
         super.onDestroy();
         EMClient.getInstance().chatManager().removeMessageListener(mEMMessageListener);
+    }
+
+    //发送消息方法
+    //==========================================================================
+    protected void sendTextMessage(String content) {
+        EMMessage message = EMMessage.createTxtSendMessage(content, mUserName);
+        //sendMessage(message);
     }
 }

@@ -54,7 +54,7 @@ public class ChatInputMenu extends LinearLayout {
     public void init() {
         // 主按钮菜单栏,没有自定义的用默认的
         if(chatPrimaryMenu == null){
-            chatPrimaryMenu = (ChatPrimaryMenu) layoutInflater.inflate(R.layout.layout_chat_primary_menu, null);
+            chatPrimaryMenu = (ChatPrimaryMenu) LayoutInflater.from(context).inflate(R.layout.layout_chat_primary_menu, null);
         }
         primaryMenuContainer.addView(chatPrimaryMenu);
 
