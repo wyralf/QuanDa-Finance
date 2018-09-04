@@ -31,14 +31,15 @@ public class ChatInputMenu extends LinearLayout {
 
     public ChatInputMenu(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
+        init(context);
     }
 
     public ChatInputMenu(Context context) {
         super(context);
-        init(context, null);
+        init(context);
     }
 
-    private void init(Context context, AttributeSet attrs) {
+    private void init(Context context) {
         this.context = context;
         layoutInflater = LayoutInflater.from(context);
         layoutInflater.inflate(R.layout.widget_chat_input_menu, this);
@@ -48,13 +49,14 @@ public class ChatInputMenu extends LinearLayout {
 
         // 扩展按钮栏
         chatExtendMenu = (ChatExtendMenu) findViewById(R.id.extend_menu);
+        init();
 
     }
 
     public void init() {
         // 主按钮菜单栏,没有自定义的用默认的
         if(chatPrimaryMenu == null){
-            chatPrimaryMenu = (ChatPrimaryMenu) LayoutInflater.from(context).inflate(R.layout.layout_chat_primary_menu, null);
+            chatPrimaryMenu = new ChatPrimaryMenu(context);
         }
         primaryMenuContainer.addView(chatPrimaryMenu);
 

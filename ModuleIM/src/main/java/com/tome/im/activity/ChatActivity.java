@@ -65,7 +65,6 @@ public class ChatActivity extends BaseActivity implements ChatView {
         EMClient.getInstance().chatManager().addMessageListener(mEMMessageListener);
         mChatPresenter.loadMessages(mUserName);
         // init input menu
-        inputMenu.init();
         inputMenu.setChatInputMenuListener(new ChatInputMenu.ChatInputMenuListener() {
 
 
